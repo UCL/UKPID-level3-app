@@ -1,0 +1,27 @@
+{
+  "name": "ukpid-level3-app",
+  "version": "1.0.0",
+  "description": "Frontend app extension of the UKPID database to support of level 3 studies",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UCL/UKPID-level3-app.git"
+  },
+  "author": "David Guzman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UCL/UKPID-level3-app/issues"
+  },
+  "homepage": "https://github.com/UCL/UKPID-level3-app#readme",
+  "dependencies": {
+    "next": "^9.1.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
