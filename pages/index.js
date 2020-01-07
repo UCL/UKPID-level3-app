@@ -1,7 +1,9 @@
 import React from 'react';
 
+import SideBar from './sidebar';
+
 const Index = () => (
-  <div>TEMPLATE</div>
+  <SideBar />
 );
 
 export default Index;
