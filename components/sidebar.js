@@ -3,10 +3,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 
 const SideBar = () => (
-  <Drawer
-    variant="permanent"
-    anchor="left"
-  >
+  <Drawer variant="permanent" anchor="left">
     <Divider />
   </Drawer>
 );

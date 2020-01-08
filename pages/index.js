@@ -1,9 +1,15 @@
 import React from 'react';
 
-import SideBar from './sidebar';
+import ApplicationBar from '../components/applicationbar';
+import SideBar from '../components/sidebar';
+import EntryForm from '../components/trainee-network/entry-form';
 
 const Index = () => (
-  <SideBar />
+  <div>
+    <ApplicationBar />
+    <SideBar />
+    <EntryForm />
+  </div>
 );
 
 export default Index;
