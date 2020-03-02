@@ -41,7 +41,7 @@ const CyclophosphamideControl = () => (
   <Checkbox checked={false} value="cyclophosphamide" />
 );
 
-const OtherControl = () => <TextField label="Other" variant="outlined" />;
+const OtherControl = () => <TextField label="Other" />;
 
 const Question2Prompt = () => <Typography>{question2Text}</Typography>;
 

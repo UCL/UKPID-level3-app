@@ -8,6 +8,8 @@ import { Question2Data, Question2Prompt } from './question2';
 import { Question3Data, Question3Prompt } from './question3';
 import { Question4Data, Question4Prompt } from './question4';
 import { Question5Data, Question5Prompt } from './question5';
+import { Question6Data, Question6Prompt } from './question6';
+import { Question7Data, Question7Prompt } from './question7';
 
 const EntryForm = () => (
   <Paper>
@@ -53,6 +55,24 @@ const EntryForm = () => (
       </Grid>
       <Grid item xs={12}>
         <Question5Data />
+      </Grid>
+    </Grid>
+    <Divider />
+    <Grid container>
+      <Grid item xs={12}>
+        <Question6Prompt />
+      </Grid>
+      <Grid item xs={12}>
+        <Question6Data />
+      </Grid>
+    </Grid>
+    <Divider />
+    <Grid container>
+      <Grid item xs={12}>
+        <Question7Prompt />
+      </Grid>
+      <Grid item xs={12}>
+        <Question7Data />
       </Grid>
     </Grid>
   </Paper>
