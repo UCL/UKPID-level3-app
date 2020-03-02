@@ -12,6 +12,7 @@ import { Question6Data, Question6Prompt } from './question6';
 import { Question7Data, Question7Prompt } from './question7';
 import { Question8Data, Question8Prompt } from './question8';
 import { Question9Data, Question9Prompt } from './question9';
+import { Question10Data, Question10Prompt } from './question10';
 
 const EntryForm = () => (
   <Paper>
@@ -93,6 +94,15 @@ const EntryForm = () => (
       </Grid>
       <Grid item xs={12}>
         <Question9Data />
+      </Grid>
+    </Grid>
+    <Divider />
+    <Grid container>
+      <Grid item xs={12}>
+        <Question10Prompt />
+      </Grid>
+      <Grid item xs={12}>
+        <Question10Data />
       </Grid>
     </Grid>
   </Paper>
