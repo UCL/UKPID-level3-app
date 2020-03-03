@@ -1,8 +1,11 @@
 import React from 'react';
 
 import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 import Typography from '@material-ui/core/Typography';
+
+import { q4_menu_data } from './question4-menu-data';
 
 const question4Text = 'What was the primary indication for the use of the '
   + 'biologic therapy?';
@@ -11,7 +14,13 @@ const Question4Prompt = () => <Typography>{question4Text}</Typography>;
 
 const Question4Data = () => (
   <FormControl>
-    <FormGroup />
+    <Select value="asthma">
+      {
+        q4_menu_data.map(item => (
+          <MenuItem key={item.id} value={item.value}>{item.label}</MenuItem>
+        ))
+      }
+    </Select>
   </FormControl>
 );
 
