@@ -46,41 +46,172 @@ export const q3_menu_data = [
   {
     id: 'ctla4',
     label: 'CTLA-4 Ig',
-    value: 'ctla4'
+    value: 'ctla4',
+    biologics: [
+      {
+        id: 'abatacept',
+        label: 'Abatacept',
+        value: 'abatacept'
+      },
+      {
+        id: 'belatacept',
+        label: 'Belatacept',
+        value: 'belatacept'
+      }
+    ]
   },
   {
     id: 'antiIl6',
     label: 'Anti-IL-6 or IL-6R monoclonal',
-    value: 'anti-il6'
+    value: 'anti-il6',
+    biologics: [
+      {
+        id: 'iltuximab',
+        label: 'Iltuximab',
+        value: 'iltuximab'
+      },
+      {
+        id: 'tocilizumab',
+        label: 'Tocilizumab',
+        value: 'tocilizumab'
+      }
+    ]
   },
   {
     id: 'antiIl4',
     label: 'Anti-IL-4 (dupiliumab), anti-IL-5 (mepolizumab), or anti-IgE (omalizumab)',
-    value: 'anti-il4'
+    value: 'anti-il4',
+    biologics: [
+      {
+        id: 'dupilimumab',
+        label: 'Dupilimumab',
+        value: 'dupiliumab'
+      },
+      {
+        id: 'mepolizumab',
+        label: 'Mepolizumab',
+        value: 'mepolizumab'
+      },
+      {
+        id: 'omalizumab',
+        label: 'Omalizumab',
+        value: 'omalizumab'
+      }
+    ]
   },
   {
     id: 'antiIl1',
     label: 'Anti-IL-1 therapy',
-    value: 'anti-il1'
+    value: 'anti-il1',
+    biologics: [
+      {
+        id: 'anakinra',
+        label: 'Anakinra',
+        value: 'anakinra'
+      },
+      {
+        id: 'canakinumab',
+        label: 'Canakinumab',
+        value: 'canakinumab'
+      }
+    ]
   },
   {
     id: 'jakInh',
     label: 'Small molecule JAK/STAT inhibitors',
-    value: 'jak-inh'
+    value: 'jak-inh',
+    biologics: [
+      {
+        id: 'ruxolitinib',
+        label: 'Ruxolitinib',
+        value: 'ruxolitinib'
+      },
+      {
+        id: 'tofacitinib',
+        label: 'Tofacitinib',
+        value: 'tofacitinib'
+      },
+      {
+        id: 'baracitinib',
+        label: 'Baracitinib',
+        value: 'baracitinib'
+      }
+    ]
   },
   {
     id: 'il12',
     label: 'IL-12p40 (Ustakinumab), IL-23 (Guselkumab)',
-    value: 'il12-il23'
+    value: 'il12-il23',
+    biologics: [
+      {
+        id: 'ustekinumab',
+        label: 'Ustekinumab',
+        value: 'ustekinumab'
+      },
+      {
+        id: 'guselkumab',
+        label: 'Guselkumab',
+        value: 'guselkumab'
+      }
+    ]
   },
   {
     id: 'antiIl17',
     label: 'Anti IL-17',
-    value: 'anti-il17'
+    value: 'anti-il17',
+    biologics: [
+      {
+        id: 'secukinumab',
+        label: 'Secukinumab',
+        value: 'secukinumab'
+      },
+      {
+        id: 'brodalumab',
+        label: 'Brodalumab',
+        value: 'brodalumab'
+      },
+      {
+        id: 'ixekizumab',
+        label: 'Ixekizumab',
+        value: 'ixekizumab'
+      }
+    ]
   },
   {
     id: 'otherAntiNeo',
     label: 'Other anti-neoplastic biologics including checkpoint blockade and other depleting antibodies',
-    value: 'other-anti-neo'
+    value: 'other-anti-neo',
+    biologics: [
+      {
+        id: 'ipilimumab',
+        label: 'Ipilimumab',
+        value: 'ipilimumab'
+      },
+      {
+        id: 'pembrolizumab',
+        label: 'Pembrolizumab',
+        value: 'pembrolizumab'
+      },
+      {
+        id: 'nivolumab',
+        label: 'Nivolumab',
+        value: 'nivolumab'
+      },
+      {
+        id: 'bevacizumab',
+        label: 'Bevacizumab (VEGF)',
+        value: 'bevacizumab'
+      },
+      {
+        id: 'cetixumab',
+        label: 'Cetixumab (EFGR)',
+        value: 'cetixumab'
+      },
+      {
+        id: 'daratumumab',
+        label: 'Daratumumab (aCD38)',
+        value: 'daratumumab'
+      }
+    ]
   }
 ];
