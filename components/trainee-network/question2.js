@@ -7,7 +7,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
-const question2Text = '2. Did the patient receive disease modifying treatment '
+const question2Text = 'Did the patient receive disease modifying treatment '
   + '(DMARDS) or other non-biologic immunosuppression before this biological '
   + 'therapy?';
 

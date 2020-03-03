@@ -14,7 +14,7 @@ const Question9Prompt = () => <Typography>{question9Text}</Typography>;
 const Question9Data = () => (
   <FormControl>
     <FormGroup>
-      <Select value="specialty">
+      <Select value="neurology">
         <MenuItem value="haematology">Haematology</MenuItem>
         <MenuItem value="rheumatology">Rheumatology</MenuItem>
         <MenuItem value="renal">Renal</MenuItem>
