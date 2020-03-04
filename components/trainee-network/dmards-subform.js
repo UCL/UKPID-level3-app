@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 
-import FormButtons from './form-buttons.js';
+import FormButtons from './form-buttons';
 import { Question1Data, Question1Prompt } from './question1';
 import { Question2Data, Question2Prompt } from './question2';
 

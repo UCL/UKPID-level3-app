@@ -1,4 +1,4 @@
-export const q3_menu_data = [
+const q3MenuData = [
   {
     id: 'anticd20',
     label: 'Anti-CD20 depleting monoclonal antibody',
@@ -7,14 +7,14 @@ export const q3_menu_data = [
       {
         id: 'rituximab',
         label: 'Rituximab',
-        value: 'rituximab'
+        value: 'rituximab',
       },
       {
         id: 'ocrelizumab',
         label: 'Ocrelizumab',
-        value: 'ocrelizumab'
-      }
-    ]
+        value: 'ocrelizumab',
+      },
+    ],
   },
   {
     id: 'antitnfs',
@@ -24,24 +24,24 @@ export const q3_menu_data = [
       {
         id: 'infliximab',
         label: 'Infliximab',
-        value: 'infliximab'
+        value: 'infliximab',
       },
       {
         id: 'adalimumab',
         label: 'Adalimumab',
-        value: 'adalimumab'
+        value: 'adalimumab',
       },
       {
         id: 'entanercept',
         label: 'Entanercept',
-        value: 'entanercept'
+        value: 'entanercept',
       },
       {
         id: 'golimumab',
         label: 'Golimumab',
-        value: 'golimumab'
-      }
-    ]
+        value: 'golimumab',
+      },
+    ],
   },
   {
     id: 'ctla4',
@@ -51,14 +51,14 @@ export const q3_menu_data = [
       {
         id: 'abatacept',
         label: 'Abatacept',
-        value: 'abatacept'
+        value: 'abatacept',
       },
       {
         id: 'belatacept',
         label: 'Belatacept',
-        value: 'belatacept'
-      }
-    ]
+        value: 'belatacept',
+      },
+    ],
   },
   {
     id: 'antiIl6',
@@ -68,14 +68,14 @@ export const q3_menu_data = [
       {
         id: 'iltuximab',
         label: 'Iltuximab',
-        value: 'iltuximab'
+        value: 'iltuximab',
       },
       {
         id: 'tocilizumab',
         label: 'Tocilizumab',
-        value: 'tocilizumab'
-      }
-    ]
+        value: 'tocilizumab',
+      },
+    ],
   },
   {
     id: 'antiIl4',
@@ -85,19 +85,19 @@ export const q3_menu_data = [
       {
         id: 'dupilimumab',
         label: 'Dupilimumab',
-        value: 'dupiliumab'
+        value: 'dupiliumab',
       },
       {
         id: 'mepolizumab',
         label: 'Mepolizumab',
-        value: 'mepolizumab'
+        value: 'mepolizumab',
       },
       {
         id: 'omalizumab',
         label: 'Omalizumab',
-        value: 'omalizumab'
-      }
-    ]
+        value: 'omalizumab',
+      },
+    ],
   },
   {
     id: 'antiIl1',
@@ -107,14 +107,14 @@ export const q3_menu_data = [
       {
         id: 'anakinra',
         label: 'Anakinra',
-        value: 'anakinra'
+        value: 'anakinra',
       },
       {
         id: 'canakinumab',
         label: 'Canakinumab',
-        value: 'canakinumab'
-      }
-    ]
+        value: 'canakinumab',
+      },
+    ],
   },
   {
     id: 'jakInh',
@@ -124,19 +124,19 @@ export const q3_menu_data = [
       {
         id: 'ruxolitinib',
         label: 'Ruxolitinib',
-        value: 'ruxolitinib'
+        value: 'ruxolitinib',
       },
       {
         id: 'tofacitinib',
         label: 'Tofacitinib',
-        value: 'tofacitinib'
+        value: 'tofacitinib',
       },
       {
         id: 'baracitinib',
         label: 'Baracitinib',
-        value: 'baracitinib'
-      }
-    ]
+        value: 'baracitinib',
+      },
+    ],
   },
   {
     id: 'il12',
@@ -146,14 +146,14 @@ export const q3_menu_data = [
       {
         id: 'ustekinumab',
         label: 'Ustekinumab',
-        value: 'ustekinumab'
+        value: 'ustekinumab',
       },
       {
         id: 'guselkumab',
         label: 'Guselkumab',
-        value: 'guselkumab'
-      }
-    ]
+        value: 'guselkumab',
+      },
+    ],
   },
   {
     id: 'antiIl17',
@@ -163,19 +163,19 @@ export const q3_menu_data = [
       {
         id: 'secukinumab',
         label: 'Secukinumab',
-        value: 'secukinumab'
+        value: 'secukinumab',
       },
       {
         id: 'brodalumab',
         label: 'Brodalumab',
-        value: 'brodalumab'
+        value: 'brodalumab',
       },
       {
         id: 'ixekizumab',
         label: 'Ixekizumab',
-        value: 'ixekizumab'
-      }
-    ]
+        value: 'ixekizumab',
+      },
+    ],
   },
   {
     id: 'otherAntiNeo',
@@ -185,33 +185,35 @@ export const q3_menu_data = [
       {
         id: 'ipilimumab',
         label: 'Ipilimumab',
-        value: 'ipilimumab'
+        value: 'ipilimumab',
       },
       {
         id: 'pembrolizumab',
         label: 'Pembrolizumab',
-        value: 'pembrolizumab'
+        value: 'pembrolizumab',
       },
       {
         id: 'nivolumab',
         label: 'Nivolumab',
-        value: 'nivolumab'
+        value: 'nivolumab',
       },
       {
         id: 'bevacizumab',
         label: 'Bevacizumab (VEGF)',
-        value: 'bevacizumab'
+        value: 'bevacizumab',
       },
       {
         id: 'cetixumab',
         label: 'Cetixumab (EFGR)',
-        value: 'cetixumab'
+        value: 'cetixumab',
       },
       {
         id: 'daratumumab',
         label: 'Daratumumab (aCD38)',
-        value: 'daratumumab'
-      }
-    ]
-  }
+        value: 'daratumumab',
+      },
+    ],
+  },
 ];
+
+export default q3MenuData;

@@ -1,12 +1,10 @@
 import React from 'react';
 
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-import FormButtons from './form-buttons.js';
+import FormButtons from './form-buttons';
 import { Question3Data, Question3Prompt } from './question3';
 import { Question4Data, Question4Prompt } from './question4';
 import { Question5Data, Question5Prompt } from './question5';
