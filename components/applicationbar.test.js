@@ -3,23 +3,25 @@ import { shallow } from 'enzyme';
 
 import ApplicationBar from './applicationbar';
 
-describe('ApplicationBar component', () => {
+describe('find ApplicationBar component', () => {
   const appbar = shallow(<ApplicationBar />);
-  it('It contains a Material UI AppBar', () => {
+  it('contains a Material UI AppBar', () => {
+    expect.assertions(1);
     expect(
       appbar
         .dive()
         .find('ForwardRef(AppBar)')
-        .exists()
-    ).toEqual(true);
+        .exists(),
+    ).toStrictEqual(true);
   });
-  it('It contains a Material UI Toolbar as first child', () => {
+  it('contains a Material UI Toolbar as first child', () => {
+    expect.assertions(1);
     expect(
       appbar
         .childAt(0)
         .dive()
         .find('ForwardRef(Toolbar)')
-        .exists()
-    ).toEqual(true);
+        .exists(),
+    ).toStrictEqual(true);
   });
 });
