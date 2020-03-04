@@ -49,6 +49,7 @@ const Question3Data = () => {
             ))
           }
         </Select>
+        <FormHelperText>Name of biologic agent</FormHelperText>
       </FormControl>
     </FormGroup>
   );
