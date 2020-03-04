@@ -27,7 +27,7 @@ const Question4Data = () => {
         }
       </Select>
     </FormControl>
-  )
+  );
 };
 
 export { Question4Prompt, Question4Data };
