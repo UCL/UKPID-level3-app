@@ -25,23 +25,12 @@ const Question10Data = () => (
           control={<Radio />}
           label="NICE approved"
         />
-        <FormControlLabel
-          value="ipr"
-          control={<Radio />}
-          label="IPR"
-        />
-        <FormControlLabel
-          value="other"
-          control={<Radio />}
-          label="Other"
-        />
+        <FormControlLabel value="ipr" control={<Radio />} label="IPR" />
+        <FormControlLabel value="other" control={<Radio />} label="Other" />
       </RadioGroup>
     </FormGroup>
     <FormGroup>
-      <TextField
-        id="q9-other"
-        label="If other, please state"
-      />
+      <TextField id="q9-other" label="If other, please state" />
     </FormGroup>
   </FormControl>
 );

@@ -16,21 +16,13 @@ const Question6Prompt = () => <Typography>{question6Text}</Typography>;
 const Question6Data = () => (
   <FormControl>
     <FormGroup>
-      <RadioGroup
-        aria-label="q6-outcome"
-        name="q6-outcome"
-        value="complete"
-      >
+      <RadioGroup aria-label="q6-outcome" name="q6-outcome" value="complete">
         <FormControlLabel
           value="complete"
           control={<Radio />}
           label="Complete"
         />
-        <FormControlLabel
-          value="partial"
-          control={<Radio />}
-          label="Partial"
-        />
+        <FormControlLabel value="partial" control={<Radio />} label="Partial" />
         <FormControlLabel
           value="no-response"
           control={<Radio />}
@@ -39,9 +31,7 @@ const Question6Data = () => (
       </RadioGroup>
     </FormGroup>
     <FormGroup>
-      <FormLabel componen="legend">
-        How was this response measured?
-      </FormLabel>
+      <FormLabel componen="legend">How was this response measured?</FormLabel>
       <TextField
         id="q6-how-was-response-measured"
         helperText="how was this response judged (symptomatic, radiological, blood test measurement)"

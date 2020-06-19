@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 
-import { getRequest, postRequest } from './request-controller';
+import { postRequest } from './request-controller';
 
 import FormButtons from './form-buttons';
 import { Question1Data, Question1Prompt } from './question1';
@@ -27,9 +27,7 @@ const DmardsSubForm = () => {
       </Grid>
       <Divider />
       <Grid container>
-        <form
-          onSubmit={(event) => formAction('dummy-data')}
-        >
+        <form onSubmit={(event) => formAction('dummy-data', event)}>
           <Typography variant="h6">
             Disease modifying treatment (DMARDS) or other non-biologic
             immunosuppression

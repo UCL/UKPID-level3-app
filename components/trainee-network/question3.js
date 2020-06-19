@@ -26,11 +26,11 @@ const Question3Data = () => {
             setBiologic('');
           }}
         >
-          {
-            q3MenuData.map((item) => (
-              <MenuItem key={item.id} value={item.value}>{item.label}</MenuItem>
-            ))
-          }
+          {q3MenuData.map((item) => (
+            <MenuItem key={item.id} value={item.value}>
+              {item.label}
+            </MenuItem>
+          ))}
         </Select>
         <FormHelperText>Class of medication</FormHelperText>
       </FormControl>
@@ -39,15 +39,14 @@ const Question3Data = () => {
           value={biologic}
           onChange={(event) => setBiologic(event.target.value)}
         >
-          {
-            q3MenuData.filter(
-              (item) => item.value === classofmed,
-            ).flatMap(
-              (element) => element.biologics,
-            ).map((bio) => (
-              <MenuItem key={bio.id} value={bio.value}>{bio.label}</MenuItem>
-            ))
-          }
+          {q3MenuData
+            .filter((item) => item.value === classofmed)
+            .flatMap((element) => element.biologics)
+            .map((bio) => (
+              <MenuItem key={bio.id} value={bio.value}>
+                {bio.label}
+              </MenuItem>
+            ))}
         </Select>
         <FormHelperText>Name of biologic agent</FormHelperText>
       </FormControl>

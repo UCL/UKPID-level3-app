@@ -7,11 +7,8 @@ describe('find SideBar component', () => {
   it('shallow mount SideBar, it contains a Material UI Drawer', () => {
     expect.assertions(1);
     const sidebar = shallow(<SideBar />);
-    expect(
-      sidebar
-        .dive()
-        .find('ForwardRef(Drawer)')
-        .exists(),
-    ).toStrictEqual(true);
+    expect(sidebar.dive().find('ForwardRef(Drawer)').exists()).toStrictEqual(
+      true
+    );
   });
 });

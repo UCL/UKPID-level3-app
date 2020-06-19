@@ -34,15 +34,17 @@
     "babel-eslint": "^10.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "eslint": "^6.8.0",
+    "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jest": "^23.13.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "jest": "^24.9.0",
-    "prettier": "^1.19.1"
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -58,10 +60,12 @@
     "parser": "babel-eslint",
     "extends": [
       "airbnb",
-      "prettier"
+      "prettier",
+      "plugin:jest/all"
     ],
     "plugins": [
-      "prettier"
+      "prettier",
+      "jest"
     ],
     "parserOptions": {
       "ecmaVersion": 6,
@@ -71,7 +75,11 @@
       }
     },
     "env": {
-      "jest": "true"
+      "jest": "true",
+      "node": true,
+      "es6": true,
+      "browser": true,
+      "jest/globals": true
     },
     "rules": {
       "react/jsx-filename-extension": [
@@ -82,11 +90,17 @@
           ]
         }
       ],
-      "comma-dangle": [
-        "error",
+      "react/jsx-fragments": [
+        1,
+        "element"
+      ],
+      "react/forbid-prop-types": [
+        "warn",
         {
-          "functions": "never",
-          "exports": "always-multiline"
+          "forbid": [
+            "any",
+            "array"
+          ]
         }
       ]
     }

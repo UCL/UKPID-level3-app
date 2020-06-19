@@ -30,10 +30,7 @@ const Question9Data = () => {
         </Select>
       </FormGroup>
       <FormGroup>
-        <TextField
-          id="q9-other"
-          label="If other, please state"
-        />
+        <TextField id="q9-other" label="If other, please state" />
       </FormGroup>
     </FormControl>
   );

@@ -79,7 +79,8 @@ const q3MenuData = [
   },
   {
     id: 'antiIl4',
-    label: 'Anti-IL-4 (dupiliumab), anti-IL-5 (mepolizumab), or anti-IgE (omalizumab)',
+    label:
+      'Anti-IL-4 (dupiliumab), anti-IL-5 (mepolizumab), or anti-IgE (omalizumab)',
     value: 'anti-il4',
     biologics: [
       {
@@ -179,7 +180,8 @@ const q3MenuData = [
   },
   {
     id: 'otherAntiNeo',
-    label: 'Other anti-neoplastic biologics including checkpoint blockade and other depleting antibodies',
+    label:
+      'Other anti-neoplastic biologics including checkpoint blockade and other depleting antibodies',
     value: 'other-anti-neo',
     biologics: [
       {

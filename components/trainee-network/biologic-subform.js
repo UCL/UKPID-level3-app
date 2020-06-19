@@ -16,9 +16,7 @@ import { Question10Data, Question10Prompt } from './question10';
 
 const BiologicSubForm = () => (
   <form>
-    <Typography variant="h6">
-      Biological agents
-    </Typography>
+    <Typography variant="h6">Biological agents</Typography>
     <Grid container>
       <Grid item xs={12}>
         <Question3Prompt />
