@@ -3,14 +3,15 @@ import { shallow } from 'enzyme';
 
 import EntryForm from './entry-form';
 
-describe('EntryForm component', () => {
+describe('find EntryForm component', () => {
   const entryForm = shallow(<EntryForm />);
-  it('It contains a Material UI Paper container', () => {
+  it('contains a Material UI Paper container', () => {
+    expect.assertions(1);
     expect(
       entryForm
         .dive()
         .find('ForwardRef(Paper)')
-        .exists()
-    ).toEqual(true);
+        .exists(),
+    ).toStrictEqual(true);
   });
 });

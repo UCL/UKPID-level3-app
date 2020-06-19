@@ -3,9 +3,10 @@ import { shallow } from 'enzyme';
 
 import Index from './index';
 
-describe('Index component', () => {
-  it('Shallow mount Index, it contains a SideBar', () => {
+describe('find Index component', () => {
+  it('shallow mount Index, it contains a SideBar', () => {
+    expect.assertions(1);
     const index = shallow(<Index />);
-    expect(index.find('SideBar').exists()).toEqual(true);
+    expect(index.find('SideBar').exists()).toStrictEqual(true);
   });
 });
