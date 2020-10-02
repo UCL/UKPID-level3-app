@@ -23,28 +23,29 @@
   },
   "homepage": "https://github.com/UCL/UKPID-level3-app#readme",
   "dependencies": {
-    "@material-ui/core": "^4.8.3",
+    "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "next": "^9.1.7",
+    "next": "^9.5.3",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "swr": "^0.2.3"
+    "swr": "^0.3.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "eslint": "^7.2.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-jest": "^23.13.2",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.0.2",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^4.0.4",
-    "jest": "^26.0.1",
-    "prettier": "^2.0.5"
+    "eslint-plugin-react": "^7.21.2",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.2"
   },
   "jest": {
     "setupFilesAfterEnv": [
