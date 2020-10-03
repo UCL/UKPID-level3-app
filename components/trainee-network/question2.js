@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
@@ -12,72 +13,138 @@ const question2Text =
   '(DMARDS) or other non-biologic immunosuppression before this biological ' +
   'therapy?';
 
-const SteroidsControl = () => <Checkbox checked={false} value="steroids" />;
+const SteroidsControl = () => <Checkbox value="steroids" />;
 
-const MethothrexateControl = () => (
-  <Checkbox checked={false} value="methothrexate" />
-);
+const MethothrexateControl = () => <Checkbox value="methothrexate" />;
 
-const AzathioprineControl = () => (
-  <Checkbox checked={false} value="azathioprine" />
-);
+const AzathioprineControl = () => <Checkbox value="azathioprine" />;
 
-const CiclosporinControl = () => (
-  <Checkbox checked={false} value="ciclosporin" />
-);
+const CiclosporinControl = () => <Checkbox value="ciclosporin" />;
 
-const MycophenylateControl = () => (
-  <Checkbox checked={false} value="mycophenylate" />
-);
+const MycophenylateControl = () => <Checkbox value="mycophenylate" />;
 
-const HydroxychloroquineControl = () => (
-  <Checkbox checked={false} value="hydroxychloroquine" />
-);
+const HydroxychloroquineControl = () => <Checkbox value="hydroxychloroquine" />;
 
-const SulfasalazineControl = () => (
-  <Checkbox checked={false} value="sulfasalazine" />
-);
+const SulfasalazineControl = () => <Checkbox value="sulfasalazine" />;
 
-const CyclophosphamideControl = () => (
-  <Checkbox checked={false} value="cyclophosphamide" />
-);
+const CyclophosphamideControl = () => <Checkbox value="cyclophosphamide" />;
 
-const OtherControl = () => <TextField label="Other" />;
+const OtherControl = (props) => {
+  const {value, onChangeCallback} = props;
+  return (
+    <TextField value={value} onChange={onChangeCallback} label="Other" />
+  )
+};
+OtherControl.propTypes = {
+  value: PropTypes.string,
+  onChangeCallback: PropTypes.func.isRequired
+}
+OtherControl.defaultProps = {
+  value: ''
+}
 
 const Question2Prompt = () => <Typography>{question2Text}</Typography>;
 
-const Question2Data = () => (
-  <FormControl>
-    <FormGroup>
-      <FormControlLabel control={<SteroidsControl />} label="Steroids" />
-      <FormControlLabel
-        control={<MethothrexateControl />}
-        label="Methotrexate"
-      />
-      <FormControlLabel
-        control={<AzathioprineControl />}
-        label="Azathioprine"
-      />
-      <FormControlLabel control={<CiclosporinControl />} label="Ciclosporin" />
-      <FormControlLabel
-        control={<MycophenylateControl />}
-        label="Mycophenylate"
-      />
-      <FormControlLabel
-        control={<HydroxychloroquineControl />}
-        label="Hydroxychloroquine"
-      />
-      <FormControlLabel
-        control={<SulfasalazineControl />}
-        label="Sulfasalazine"
-      />
-      <FormControlLabel
-        control={<CyclophosphamideControl />}
-        label="Cyclophosphamide"
-      />
-      <OtherControl />
-    </FormGroup>
-  </FormControl>
-);
+const Question2Data = () => {
+  const [dmardsData, setDmardsData] = useState({
+    steroids: false,
+    methothrexate: false,
+    azathioprine: false,
+    ciclosporin: false,
+    mycophenylate: false,
+    hydroxychloroquine: false,
+    sulfasalazine: false,
+    cyclophosphamide: false,
+    other: ''
+  });
+  return (
+    <FormControl>
+      <FormGroup>
+        <FormControlLabel
+          control={(
+            <SteroidsControl
+              checked={dmardsData.steroids}
+              onClick={(e) => setDmardsData({steroids: e.target.checked})}
+            />
+          )}
+          label="Steroids"
+        />
+        <FormControlLabel
+          control={(
+            <MethothrexateControl
+              checked={dmardsData.methothrexate}
+              onClick={(e) => setDmardsData({methothrexate: e.target.checked})}
+            />
+          )}
+          label="Methotrexate"
+        />
+        <FormControlLabel
+          control={(
+            <AzathioprineControl
+              checked={dmardsData.azathioprine}
+              onClick={(e) => setDmardsData({azathioprine: e.target.checked})}
+            />
+          )}
+          label="Azathioprine"
+        />
+        <FormControlLabel
+          control={(
+            <CiclosporinControl
+              checked={dmardsData.ciclosporin}
+              onClick={(e) => setDmardsData({ciclosporin: e.target.checked})}
+            />
+          )}
+          label="Ciclosporin"
+        />
+        <FormControlLabel
+          control={(
+            <MycophenylateControl
+              checked={dmardsData.mycophenylate}
+              onClick={(e) => setDmardsData({mycophenylate: e.target.checked})}
+            />
+          )}
+          label="Mycophenylate"
+        />
+        <FormControlLabel
+          control={(
+            <HydroxychloroquineControl
+              checked={dmardsData.hydroxychloroquine}
+              onClick={(e) => setDmardsData(
+                {hydroxychloroquine: e.target.checked}
+              )}
+            />
+          )}
+          label="Hydroxychloroquine"
+        />
+        <FormControlLabel
+          control={(
+            <SulfasalazineControl
+              checked={dmardsData.sulfasalazine}
+              onClick={(e) => setDmardsData({sulfasalazine: e.target.checked})}
+            />
+          )}
+          label="Sulfasalazine"
+        />
+        <FormControlLabel
+          control={(
+            <CyclophosphamideControl
+              checked={dmardsData.cyclophosphamide}
+              onClick={(e) => setDmardsData(
+                {cyclophosphamide: e.target.checked}
+              )}
+            />
+          )}
+          label="Cyclophosphamide"
+        />
+        <OtherControl
+          value={dmardsData.other}
+          onChangeCallback={(e) => setDmardsData(
+            {other: e.target.value}
+          )}
+        />
+      </FormGroup>
+    </FormControl>
+  );
+};
 
 export { Question2Prompt, Question2Data };
