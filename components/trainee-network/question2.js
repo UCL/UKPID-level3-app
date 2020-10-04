@@ -13,21 +13,117 @@ const question2Text =
   '(DMARDS) or other non-biologic immunosuppression before this biological ' +
   'therapy?';
 
-const SteroidsControl = () => <Checkbox value="steroids" />;
+const SteroidsControl = (props) => {
+  const {checked, onClickCallback} = props;
+  return (
+    <Checkbox checked={checked} onClick={onClickCallback} value="steroids" />
+  )
+};
+SteroidsControl.propTypes = {
+  checked: PropTypes.bool,
+  onClickCallback: PropTypes.func.isRequired
+};
+SteroidsControl.defaultProps = {
+  checked: false
+};
 
-const MethothrexateControl = () => <Checkbox value="methothrexate" />;
+const MethothrexateControl = (props) => {
+  const {checked, onClickCallback} = props;
+  return (
+    <Checkbox checked={checked} onClick={onClickCallback} value="methothrexate" />
+  )
+};
+MethothrexateControl.propTypes = {
+  checked: PropTypes.bool,
+  onClickCallback: PropTypes.func.isRequired
+};
+MethothrexateControl.defaultProps = {
+  checked: false
+};
 
-const AzathioprineControl = () => <Checkbox value="azathioprine" />;
+const AzathioprineControl = (props) => {
+  const {checked, onClickCallback} = props;
+  return (
+    <Checkbox checked={checked} onClick={onClickCallback} value="azathioprine" />
+  )
+};
+AzathioprineControl.propTypes = {
+  checked: PropTypes.bool,
+  onClickCallback: PropTypes.func.isRequired
+};
+AzathioprineControl.defaultProps = {
+  checked: false
+};
 
-const CiclosporinControl = () => <Checkbox value="ciclosporin" />;
+const CiclosporinControl = (props) => {
+  const {checked, onClickCallback} = props;
+  return (
+    <Checkbox checked={checked} onClick={onClickCallback} value="ciclosporin" />
+  )
+};
+CiclosporinControl.propTypes = {
+  checked: PropTypes.bool,
+  onClickCallback: PropTypes.func.isRequired
+};
+CiclosporinControl.defaultProps = {
+  checked: false
+};
 
-const MycophenylateControl = () => <Checkbox value="mycophenylate" />;
+const MycophenylateControl = (props) => {
+  const {checked, onClickCallback} = props;
+  return (
+    <Checkbox checked={checked} onClick={onClickCallback} value="mycophenylate" />
+  )
+};
+MycophenylateControl.propTypes = {
+  checked: PropTypes.bool,
+  onClickCallback: PropTypes.func.isRequired
+};
+MycophenylateControl.defaultProps = {
+  checked: false
+};
 
-const HydroxychloroquineControl = () => <Checkbox value="hydroxychloroquine" />;
+const HydroxychloroquineControl = (props) => {
+  const {checked, onClickCallback} = props;
+  return (
+    <Checkbox checked={checked} onClick={onClickCallback} value="hydroxychloroquine" />
+  )
+};
+HydroxychloroquineControl.propTypes = {
+  checked: PropTypes.bool,
+  onClickCallback: PropTypes.func.isRequired
+};
+HydroxychloroquineControl.defaultProps = {
+  checked: false
+};
 
-const SulfasalazineControl = () => <Checkbox value="sulfasalazine" />;
+const SulfasalazineControl = (props) => {
+  const {checked, onClickCallback} = props;
+  return (
+    <Checkbox checked={checked} onClick={onClickCallback} value="sulfasalazine" />
+  )
+};
+SulfasalazineControl.propTypes = {
+  checked: PropTypes.bool,
+  onClickCallback: PropTypes.func.isRequired
+};
+SulfasalazineControl.defaultProps = {
+  checked: false
+}
 
-const CyclophosphamideControl = () => <Checkbox value="cyclophosphamide" />;
+const CyclophosphamideControl = (props) => {
+  const {checked, onClickCallback} = props;
+  return (
+    <Checkbox checked={checked} onClick={onClickCallback} value="cyclophosphamide" />
+  )
+};
+CyclophosphamideControl.propTypes = {
+  checked: PropTypes.bool,
+  onClickCallback: PropTypes.func.isRequired
+};
+CyclophosphamideControl.defaultProps = {
+  checked: false
+}
 
 const OtherControl = (props) => {
   const {value, onChangeCallback} = props;
@@ -38,33 +134,31 @@ const OtherControl = (props) => {
 OtherControl.propTypes = {
   value: PropTypes.string,
   onChangeCallback: PropTypes.func.isRequired
-}
+};
 OtherControl.defaultProps = {
   value: ''
-}
+};
 
 const Question2Prompt = () => <Typography>{question2Text}</Typography>;
 
 const Question2Data = () => {
-  const [dmardsData, setDmardsData] = useState({
-    steroids: false,
-    methothrexate: false,
-    azathioprine: false,
-    ciclosporin: false,
-    mycophenylate: false,
-    hydroxychloroquine: false,
-    sulfasalazine: false,
-    cyclophosphamide: false,
-    other: ''
-  });
+  const [steroids, setSteroids] = useState(false);
+  const [methothrexate, setMethothrexate] = useState(false);
+  const [azathioprine, setAzathioprine] = useState(false);
+  const [ciclosporin, setCiclosporin] = useState(false);
+  const [mycophenylate, setMycophenylate] = useState(false);
+  const [hydroxychloroquine, setHydroxychloroquine] = useState(false);
+  const [sulfasalazine, setSulfazalazine] = useState(false);
+  const [cyclophosphamide, setCyclophosphamide] = useState(false);
+  const [other, setOther] = useState('');
   return (
     <FormControl>
       <FormGroup>
         <FormControlLabel
           control={(
             <SteroidsControl
-              checked={dmardsData.steroids}
-              onClick={(e) => setDmardsData({steroids: e.target.checked})}
+              checked={steroids}
+              onClickCallback={(e) => setSteroids(e.target.checked)}
             />
           )}
           label="Steroids"
@@ -72,8 +166,8 @@ const Question2Data = () => {
         <FormControlLabel
           control={(
             <MethothrexateControl
-              checked={dmardsData.methothrexate}
-              onClick={(e) => setDmardsData({methothrexate: e.target.checked})}
+              checked={methothrexate}
+              onClickCallback={(e) => setMethothrexate(e.target.checked)}
             />
           )}
           label="Methotrexate"
@@ -81,8 +175,8 @@ const Question2Data = () => {
         <FormControlLabel
           control={(
             <AzathioprineControl
-              checked={dmardsData.azathioprine}
-              onClick={(e) => setDmardsData({azathioprine: e.target.checked})}
+              checked={azathioprine}
+              onClickCallback={(e) => setAzathioprine(e.target.checked)}
             />
           )}
           label="Azathioprine"
@@ -90,8 +184,8 @@ const Question2Data = () => {
         <FormControlLabel
           control={(
             <CiclosporinControl
-              checked={dmardsData.ciclosporin}
-              onClick={(e) => setDmardsData({ciclosporin: e.target.checked})}
+              checked={ciclosporin}
+              onClickCallback={(e) => setCiclosporin(e.target.checked)}
             />
           )}
           label="Ciclosporin"
@@ -99,8 +193,8 @@ const Question2Data = () => {
         <FormControlLabel
           control={(
             <MycophenylateControl
-              checked={dmardsData.mycophenylate}
-              onClick={(e) => setDmardsData({mycophenylate: e.target.checked})}
+              checked={mycophenylate}
+              onClickCallback={(e) => setMycophenylate(e.target.checked)}
             />
           )}
           label="Mycophenylate"
@@ -108,10 +202,8 @@ const Question2Data = () => {
         <FormControlLabel
           control={(
             <HydroxychloroquineControl
-              checked={dmardsData.hydroxychloroquine}
-              onClick={(e) => setDmardsData(
-                {hydroxychloroquine: e.target.checked}
-              )}
+              checked={hydroxychloroquine}
+              onClickCallback={(e) => setHydroxychloroquine(e.target.checked)}
             />
           )}
           label="Hydroxychloroquine"
@@ -119,8 +211,8 @@ const Question2Data = () => {
         <FormControlLabel
           control={(
             <SulfasalazineControl
-              checked={dmardsData.sulfasalazine}
-              onClick={(e) => setDmardsData({sulfasalazine: e.target.checked})}
+              checked={sulfasalazine}
+              onClickCallback={(e) => setSulfazalazine(e.target.checked)}
             />
           )}
           label="Sulfasalazine"
@@ -128,19 +220,15 @@ const Question2Data = () => {
         <FormControlLabel
           control={(
             <CyclophosphamideControl
-              checked={dmardsData.cyclophosphamide}
-              onClick={(e) => setDmardsData(
-                {cyclophosphamide: e.target.checked}
-              )}
+              checked={cyclophosphamide}
+              onClickCallback={(e) => setCyclophosphamide(e.target.checked)}
             />
           )}
           label="Cyclophosphamide"
         />
         <OtherControl
-          value={dmardsData.other}
-          onChangeCallback={(e) => setDmardsData(
-            {other: e.target.value}
-          )}
+          value={other}
+          onChangeCallback={(e) => setOther(e.target.value)}
         />
       </FormGroup>
     </FormControl>
