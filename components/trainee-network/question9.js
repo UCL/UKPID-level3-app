@@ -13,6 +13,7 @@ const Question9Prompt = () => <Typography>{question9Text}</Typography>;
 
 const Question9Data = () => {
   const [specialty, setSpecialty] = useState('');
+  const [otherSpecialty, setOtherSpecialty] = useState(null);
   return (
     <FormControl>
       <FormGroup>
@@ -30,7 +31,12 @@ const Question9Data = () => {
         </Select>
       </FormGroup>
       <FormGroup>
-        <TextField id="q9-other" label="If other, please state" />
+        <TextField
+          value={otherSpecialty}
+          onChange={(e) => setOtherSpecialty(e.target.value)}
+          id="q9-other"
+          label="If other, please state"
+        />
       </FormGroup>
     </FormControl>
   );

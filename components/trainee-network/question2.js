@@ -16,7 +16,12 @@ const question2Text =
 const SteroidsControl = (props) => {
   const {checked, onClickCallback} = props;
   return (
-    <Checkbox checked={checked} onClick={onClickCallback} value="steroids" />
+    <Checkbox
+      checked={checked}
+      onClick={onClickCallback}
+      value="steroids"
+      color="primary"
+    />
   )
 };
 SteroidsControl.propTypes = {
@@ -30,7 +35,12 @@ SteroidsControl.defaultProps = {
 const MethothrexateControl = (props) => {
   const {checked, onClickCallback} = props;
   return (
-    <Checkbox checked={checked} onClick={onClickCallback} value="methothrexate" />
+    <Checkbox
+      checked={checked}
+      onClick={onClickCallback}
+      value="methothrexate"
+      color="primary"
+    />
   )
 };
 MethothrexateControl.propTypes = {
@@ -44,7 +54,12 @@ MethothrexateControl.defaultProps = {
 const AzathioprineControl = (props) => {
   const {checked, onClickCallback} = props;
   return (
-    <Checkbox checked={checked} onClick={onClickCallback} value="azathioprine" />
+    <Checkbox
+      checked={checked}
+      onClick={onClickCallback}
+      value="azathioprine"
+      color="primary"
+    />
   )
 };
 AzathioprineControl.propTypes = {
@@ -58,7 +73,12 @@ AzathioprineControl.defaultProps = {
 const CiclosporinControl = (props) => {
   const {checked, onClickCallback} = props;
   return (
-    <Checkbox checked={checked} onClick={onClickCallback} value="ciclosporin" />
+    <Checkbox
+      checked={checked}
+      onClick={onClickCallback}
+      value="ciclosporin"
+      color="primary"
+    />
   )
 };
 CiclosporinControl.propTypes = {
@@ -72,7 +92,12 @@ CiclosporinControl.defaultProps = {
 const MycophenylateControl = (props) => {
   const {checked, onClickCallback} = props;
   return (
-    <Checkbox checked={checked} onClick={onClickCallback} value="mycophenylate" />
+    <Checkbox
+      checked={checked}
+      onClick={onClickCallback}
+      value="mycophenylate"
+      color="primary"
+    />
   )
 };
 MycophenylateControl.propTypes = {
@@ -86,7 +111,12 @@ MycophenylateControl.defaultProps = {
 const HydroxychloroquineControl = (props) => {
   const {checked, onClickCallback} = props;
   return (
-    <Checkbox checked={checked} onClick={onClickCallback} value="hydroxychloroquine" />
+    <Checkbox
+      checked={checked}
+      onClick={onClickCallback}
+      value="hydroxychloroquine"
+      color="primary"
+    />
   )
 };
 HydroxychloroquineControl.propTypes = {
@@ -100,7 +130,12 @@ HydroxychloroquineControl.defaultProps = {
 const SulfasalazineControl = (props) => {
   const {checked, onClickCallback} = props;
   return (
-    <Checkbox checked={checked} onClick={onClickCallback} value="sulfasalazine" />
+    <Checkbox
+      checked={checked}
+      onClick={onClickCallback}
+      value="sulfasalazine"
+      color="primary"
+    />
   )
 };
 SulfasalazineControl.propTypes = {
@@ -114,7 +149,12 @@ SulfasalazineControl.defaultProps = {
 const CyclophosphamideControl = (props) => {
   const {checked, onClickCallback} = props;
   return (
-    <Checkbox checked={checked} onClick={onClickCallback} value="cyclophosphamide" />
+    <Checkbox
+      checked={checked}
+      onClick={onClickCallback}
+      value="cyclophosphamide"
+      color="primary"
+    />
   )
 };
 CyclophosphamideControl.propTypes = {
