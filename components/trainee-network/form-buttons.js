@@ -6,7 +6,7 @@ import ClearIcon from '@material-ui/icons/Clear';
 import SaveIcon from '@material-ui/icons/Save';
 
 const FormButtons = (props) => {
-  const {resetCallback} = props;
+  const {resetCallback, submitCallback} = props;
   return (
     <React.Fragment>
       <Button
@@ -14,6 +14,7 @@ const FormButtons = (props) => {
         color="primary"
         size="small"
         type="submit"
+        onClick={submitCallback}
         startIcon={<SaveIcon />}
       >
         Save
@@ -32,7 +33,8 @@ const FormButtons = (props) => {
   )
 };
 FormButtons.propTypes = {
-  resetCallback: PropTypes.func.isRequired
+  resetCallback: PropTypes.func.isRequired,
+  submitCallback: PropTypes.func.isRequired
 }
 
 export default FormButtons;

@@ -41,14 +41,13 @@ const DmardsSubForm = () => {
   const resetCallback = () => {
     dispatch({type: 'reset'});
   };
-  const formAction = (data) => (event) => {
-    event.preventDefault();
-    postRequest('post/endpoint', data);
+  const formAction = () => {
+    postRequest('rest/p/dmards', state);
   };
   return (
     <React.Fragment>
       <Grid container>
-        <form onSubmit={(event) => formAction('dummy-data', event)}>
+        <form onSubmit={(e) => e.preventDefault()}>
           <Typography variant="h6">
             Disease modifying treatment (DMARDS) or other non-biologic
             immunosuppression
@@ -57,9 +56,15 @@ const DmardsSubForm = () => {
             <Question2Prompt />
           </Grid>
           <Grid item xs={12}>
-            <Question2Data dmardsState={state} dmardsCallback={dmardsCallback} />
+            <Question2Data
+              dmardsState={state}
+              dmardsCallback={dmardsCallback}
+            />
           </Grid>
-          <FormButtons resetCallback={resetCallback} />
+          <FormButtons
+            resetCallback={resetCallback}
+            submitCallback={formAction}
+          />
         </form>
       </Grid>
     </React.Fragment>

@@ -13,7 +13,7 @@ const getRequest = async (path) => {
 const postRequest = async (path, body) => {
   const res = await fetch(path, {
     method: 'POST',
-    body,
+    body: JSON.stringify(body),
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
