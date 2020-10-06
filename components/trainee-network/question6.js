@@ -14,7 +14,7 @@ const question6Text = 'What was the outcome of the treatment?';
 const Question6Prompt = () => <Typography>{question6Text}</Typography>;
 
 const Question6Data = () => {
-  const [treatmentOutcome, setTreatmentOutcome] = useState(null);
+  const [treatmentOutcome, setTreatmentOutcome] = useState('');
   return (
     <FormControl>
       <FormGroup>

@@ -16,11 +16,11 @@ const Question10Data = () => {
   const [
     biologicTreatmentFunding,
     setBiologicTreatmentFunding
-  ] = useState(null);
+  ] = useState('');
   const [
     biologicTreatmentOtherFunding,
     setBiologicTreatmentOtherFunding
-  ] = useState(null);
+  ] = useState('');
   return (
     <FormControl>
       <FormGroup>

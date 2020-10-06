@@ -13,9 +13,9 @@ const TabBody = (props) => {
   const { tabIndex } = props;
   switch (tabIndex) {
       case 0:
-        return <DmardsSubForm />;
+        return <DmardsSubForm patientId={1} />;
       case 1:
-        return <BiologicSubForm />;
+        return <BiologicSubForm patientId={1} />;
       default:
         return <p>Insert tab body</p>;
     }

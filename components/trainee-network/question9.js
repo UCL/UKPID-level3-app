@@ -13,7 +13,7 @@ const Question9Prompt = () => <Typography>{question9Text}</Typography>;
 
 const Question9Data = () => {
   const [specialty, setSpecialty] = useState('');
-  const [otherSpecialty, setOtherSpecialty] = useState(null);
+  const [otherSpecialty, setOtherSpecialty] = useState('');
   return (
     <FormControl>
       <FormGroup>

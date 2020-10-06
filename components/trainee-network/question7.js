@@ -19,7 +19,7 @@ const Question7Data = () => {
   const [
     biologicComplicationsDetails,
     setBiologicComplicationsDetails
-  ] = useState(null);
+  ] = useState('');
   return (
     <FormControl>
       <FormGroup>

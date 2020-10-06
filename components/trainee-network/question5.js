@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -10,19 +11,26 @@ const question5Text =
 
 const Question5Prompt = () => <Typography>{question5Text}</Typography>;
 
-const Question5Data = () => {
-  const [howLongBiologic, setHowLongBiologic] = useState(null);
+const Question5Data = (props) => {
+  const {howLongBiologic, biologicCallback} = props;
+
   return (
     <FormControl>
       <FormGroup>
         <TextField
           value={howLongBiologic}
-          onChange={(e) => setHowLongBiologic(e.target.value)}
+          onChange={biologicCallback}
           label="Length of treatment"
+          name="howLongBiologic"
         />
       </FormGroup>
     </FormControl>
   )
+};
+
+Question5Data.propTypes = {
+  howLongBiologic: PropTypes.string.isRequired,
+  biologicCallback: PropTypes.func.isRequired
 };
 
 export { Question5Data, Question5Prompt };

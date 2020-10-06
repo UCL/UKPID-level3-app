@@ -1,4 +1,5 @@
 import React, {useReducer, useCallback, useEffect} from 'react';
+import PropTypes from 'prop-types';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -7,15 +8,6 @@ import { getRequest, postRequest } from './request-controller';
 
 import FormButtons from './form-buttons';
 import { Question2Data, Question2Prompt } from './question2';
-
-const getDmardsForPatientId = (patientId) => {
-  const {data, error} = getRequest(`rest/g/dmards/${patientId}`);
-  return {
-    dmards: data,
-    isLoading: !error && !data,
-    isError: error
-  }
-};
 
 const dmardsInitialState = {
   steroids: false,
@@ -39,18 +31,21 @@ const dmardsReducer = (state, action) => {
   return { ... state, [name] : value};
 };
 
-const DmardsSubForm = () => {
+const DmardsSubForm = (props) => {
+  const {patientId} = props;
   const [state, dispatch] = useReducer(dmardsReducer, dmardsInitialState);
 
   useEffect(() => {
-    const res = getDmardsForPatientId(1);
-    if (res.isError || res.isLoading) {
-      dispatch({type: 'reset'});
-    } else {
-      Object.entries(res.dmards).forEach(([key,value]) => {
-        dispatch({name: key, value});
+    getRequest(`rest/g/dmards/${patientId}`)
+      .then(res => {
+        if (res.error || !res.json) {
+          dispatch({type: 'reset'});
+        } else {
+          Object.entries(res.json).forEach(([key,value]) => {
+            dispatch({name: key, value});
+          });
+        }
       });
-    }
   },[]);
 
   const dmardsCallback = useCallback(
@@ -92,6 +87,10 @@ const DmardsSubForm = () => {
       </Grid>
     </React.Fragment>
   );
+};
+
+DmardsSubForm.propTypes = {
+  patientId: PropTypes.number.isRequired
 };
 
 export default DmardsSubForm;

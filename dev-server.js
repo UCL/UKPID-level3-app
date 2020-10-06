@@ -16,6 +16,20 @@ app.prepare().then(() => {
     });
   });
 
+  server.get("/rest/g/dmards/1", (req, res) => {
+    res.send({
+      steroids: false,
+      methothrexate: true,
+      azathioprine: false,
+      ciclosporin: false,
+      mycophenylate: true,
+      hydroxychloroquine: false,
+      sulfasalazine: false,
+      cyclophosphamide: false,
+      other: 'other dmards'
+    });
+  });
+
   server.all('*', (req, res) => handler(req, res));
 
   server.listen(port, (err) => {
