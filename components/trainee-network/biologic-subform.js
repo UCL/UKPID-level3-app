@@ -23,6 +23,7 @@ const biologicInitialState = {
   indication: '',
   howLongBiologic: '',
   treatmentOutcome: '',
+  howWasOutcomeMeasured: '',
   biologicComplications: '',
   biologicComplicationsDetails: '',
   biologicPrescribedImmunology: '',
@@ -115,6 +116,7 @@ const BiologicSubForm = (props) => {
         <Grid item xs={12}>
           <Question6Data
             treatmentOutcome={state.treatmentOutcome}
+            howWasOutcomeMeasured={state.howWasOutcomeMeasured}
             biologicCallback={biologicCallback}
           />
         </Grid>

@@ -15,7 +15,7 @@ const question6Text = 'What was the outcome of the treatment?';
 const Question6Prompt = () => <Typography>{question6Text}</Typography>;
 
 const Question6Data = (props) => {
-  const {treatmentOutcome, biologicCallback} = props;
+  const {treatmentOutcome, howWasOutcomeMeasured, biologicCallback} = props;
   return (
     <FormControl>
       <FormGroup>
@@ -46,6 +46,9 @@ const Question6Data = (props) => {
         <FormLabel component="legend">How was this response measured?</FormLabel>
         <TextField
           id="q6-how-was-response-measured"
+          name="howWasOutcomeMeasured"
+          value={howWasOutcomeMeasured}
+          onChange={biologicCallback}
           helperText="how was this response judged (symptomatic, radiological, blood test measurement)"
         />
       </FormGroup>
@@ -55,6 +58,7 @@ const Question6Data = (props) => {
 
 Question6Data.propTypes = {
   treatmentOutcome: PropTypes.string.isRequired,
+  howWasOutcomeMeasured: PropTypes.string.isRequired,
   biologicCallback: PropTypes.func.isRequired
 }
 
