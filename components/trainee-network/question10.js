@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -12,23 +13,21 @@ const question10Text = 'How was this biologic treatment funded?';
 
 const Question10Prompt = () => <Typography>{question10Text}</Typography>;
 
-const Question10Data = () => {
-  const [
+const Question10Data = (props) => {
+  const {
     biologicTreatmentFunding,
-    setBiologicTreatmentFunding
-  ] = useState('');
-  const [
     biologicTreatmentOtherFunding,
-    setBiologicTreatmentOtherFunding
-  ] = useState('');
+    biologicCallback
+  } = props;
+
   return (
     <FormControl>
       <FormGroup>
         <RadioGroup
           aria-label="q10-how-treatment-was-funded"
-          name="q10-how-treatment-was-funded"
+          name="biologicTreatmentFunding"
           value={biologicTreatmentFunding}
-          onChange={(e) => setBiologicTreatmentFunding(e.target.value)}
+          onChange={biologicCallback}
         >
           <FormControlLabel
             value="nice"
@@ -50,13 +49,20 @@ const Question10Data = () => {
       <FormGroup>
         <TextField
           value={biologicTreatmentOtherFunding}
-          onChange={(e) => setBiologicTreatmentOtherFunding(e.target.value)}
+          onChange={biologicCallback}
           id="q9-other"
+          name="biologicTreatmentOtherFunding"
           label="If other, please state"
         />
       </FormGroup>
     </FormControl>
   )
 };
+
+Question10Data.propTypes = {
+  biologicTreatmentFunding: PropTypes.string.isRequired,
+  biologicTreatmentOtherFunding: PropTypes.string.isRequired,
+  biologicCallback: PropTypes.func.isRequired
+}
 
 export { Question10Data, Question10Prompt };

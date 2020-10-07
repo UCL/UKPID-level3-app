@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -14,20 +15,20 @@ const question7Text =
 
 const Question7Prompt = () => <Typography>{question7Text}</Typography>;
 
-const Question7Data = () => {
-  const [biologicComplications, setBiologicComplications] = useState(null);
-  const [
+const Question7Data = (props) => {
+  const {
+    biologicComplications,
     biologicComplicationsDetails,
-    setBiologicComplicationsDetails
-  ] = useState('');
+    biologicCallback
+  } = props;
   return (
     <FormControl>
       <FormGroup>
         <RadioGroup
           aria-label="q7-complications"
-          name="q7-complications"
+          name="biologicComplications"
           value={biologicComplications}
-          onChange={(e) => setBiologicComplications(e.target.value)}
+          onChange={biologicCallback}
         >
           <FormControlLabel
             value="yes"
@@ -44,13 +45,19 @@ const Question7Data = () => {
       <FormGroup>
         <TextField
           value={biologicComplicationsDetails}
-          onChange={(e) => setBiologicComplicationsDetails(e.target.value)}
-          id="q7-details"
+          onChange={biologicCallback}
+          name="biologicComplicationsDetails"
           label="Details"
         />
       </FormGroup>
     </FormControl>
   )
+};
+
+Question7Data.propTypes = {
+  biologicComplications: PropTypes.string.isRequired,
+  biologicComplicationsDetails: PropTypes.string.isRequired,
+  biologicCallback: PropTypes.func.isRequired
 };
 
 export { Question7Data, Question7Prompt };

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -11,15 +12,19 @@ const question9Text = 'If prescribed by another specialty, which specialty?';
 
 const Question9Prompt = () => <Typography>{question9Text}</Typography>;
 
-const Question9Data = () => {
-  const [specialty, setSpecialty] = useState('');
-  const [otherSpecialty, setOtherSpecialty] = useState('');
+const Question9Data = (props) => {
+  const {
+    specialty,
+    otherSpecialty,
+    biologicCallback
+  } = props;
   return (
     <FormControl>
       <FormGroup>
         <Select
           value={specialty}
-          onChange={(event) => setSpecialty(event.target.value)}
+          name="specialty"
+          onChange={biologicCallback}
         >
           <MenuItem value="haematology">Haematology</MenuItem>
           <MenuItem value="rheumatology">Rheumatology</MenuItem>
@@ -33,13 +38,20 @@ const Question9Data = () => {
       <FormGroup>
         <TextField
           value={otherSpecialty}
-          onChange={(e) => setOtherSpecialty(e.target.value)}
+          onChange={biologicCallback}
           id="q9-other"
+          name="otherSpecialty"
           label="If other, please state"
         />
       </FormGroup>
     </FormControl>
   );
 };
+
+Question9Data.propTypes = {
+  specialty: PropTypes.string.isRequired,
+  otherSpecialty: PropTypes.string.isRequired,
+  biologicCallback: PropTypes.func.isRequired
+}
 
 export { Question9Data, Question9Prompt };

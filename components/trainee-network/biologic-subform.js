@@ -113,7 +113,10 @@ const BiologicSubForm = (props) => {
           <Question6Prompt />
         </Grid>
         <Grid item xs={12}>
-          <Question6Data />
+          <Question6Data
+            treatmentOutcome={state.treatmentOutcome}
+            biologicCallback={biologicCallback}
+          />
         </Grid>
       </Grid>
       <Divider />
@@ -122,7 +125,11 @@ const BiologicSubForm = (props) => {
           <Question7Prompt />
         </Grid>
         <Grid item xs={12}>
-          <Question7Data />
+          <Question7Data
+            biologicComplications={state.biologicComplications}
+            biologicComplicationsDetails={state.biologicComplicationsDetails}
+            biologicCallback={biologicCallback}
+          />
         </Grid>
       </Grid>
       <Divider />
@@ -131,7 +138,10 @@ const BiologicSubForm = (props) => {
           <Question8Prompt />
         </Grid>
         <Grid item xs={12}>
-          <Question8Data />
+          <Question8Data
+            biologicPrescribedImmunology={state.biologicPrescribedImmunology}
+            biologicCallback={biologicCallback}
+          />
         </Grid>
       </Grid>
       <Divider />
@@ -140,7 +150,11 @@ const BiologicSubForm = (props) => {
           <Question9Prompt />
         </Grid>
         <Grid item xs={12}>
-          <Question9Data />
+          <Question9Data
+            specialty={state.specialty}
+            otherSpecialty={state.otherSpecialty}
+            biologicCallback={biologicCallback}
+          />
         </Grid>
       </Grid>
       <Divider />
@@ -149,7 +163,11 @@ const BiologicSubForm = (props) => {
           <Question10Prompt />
         </Grid>
         <Grid item xs={12}>
-          <Question10Data />
+          <Question10Data
+            biologicTreatmentFunding={state.biologicTreatmentFunding}
+            biologicTreatmentOtherFunding={state.biologicTreatmentOtherFunding}
+            biologicCallback={biologicCallback}
+          />
         </Grid>
       </Grid>
       <FormButtons resetCallback={resetCallback} />

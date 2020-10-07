@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -12,19 +13,16 @@ const question8Text =
 
 const Question8Prompt = () => <Typography>{question8Text}</Typography>;
 
-const Question8Data = () => {
-  const [
-    biologicPrescribedImmunology,
-    setBiologicPrescribedImmunology
-  ] = useState(null);
+const Question8Data = (props) => {
+  const {biologicPrescribedImmunology, biologicCallback} = props;
   return (
     <FormControl>
       <FormGroup>
         <RadioGroup
           aria-label="q8-prescribed-through-immunology"
-          name="q8-prescribed-through-immunology"
+          name="biologicPrescribedImmunology"
           value={biologicPrescribedImmunology}
-          onChange={(e) => setBiologicPrescribedImmunology(e.target.value)}
+          onChange={biologicCallback}
         >
           <FormControlLabel
             value="yes"
@@ -41,5 +39,10 @@ const Question8Data = () => {
     </FormControl>
   )
 };
+
+Question8Data.propTypes = {
+  biologicPrescribedImmunology: PropTypes.string.isRequired,
+  biologicCallback: PropTypes.func.isRequired
+}
 
 export { Question8Data, Question8Prompt };
