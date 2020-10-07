@@ -84,7 +84,11 @@ const BiologicSubForm = (props) => {
           <Question3Prompt />
         </Grid>
         <Grid item xs={12}>
-          <Question3Data />
+          <Question3Data
+            classofmed={state.classofmed}
+            biologic={state.biologic}
+            biologicCallback={biologicCallback}
+          />
         </Grid>
       </Grid>
       <Divider />
@@ -93,7 +97,10 @@ const BiologicSubForm = (props) => {
           <Question4Prompt />
         </Grid>
         <Grid item xs={12}>
-          <Question4Data />
+          <Question4Data
+            indication={state.indication}
+            biologicCallback={biologicCallback}
+          />
         </Grid>
       </Grid>
       <Divider />

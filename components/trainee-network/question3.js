@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -13,18 +14,19 @@ const question3Text = 'Which biological agent has been used?';
 
 const Question3Prompt = () => <Typography>{question3Text}</Typography>;
 
-const Question3Data = () => {
-  const [classofmed, setClassofmed] = useState('');
-  const [biologic, setBiologic] = useState('');
+const Question3Data = (props) => {
+  const {
+    classofmed,
+    biologic,
+    biologicCallback
+  } = props;
   return (
     <FormGroup>
       <FormControl>
         <Select
           value={classofmed}
-          onChange={(event) => {
-            setClassofmed(event.target.value);
-            setBiologic('');
-          }}
+          onChange={biologicCallback}
+          name="classofmed"
         >
           {q3MenuData.map((item) => (
             <MenuItem key={item.id} value={item.value}>
@@ -37,7 +39,8 @@ const Question3Data = () => {
       <FormControl>
         <Select
           value={biologic}
-          onChange={(event) => setBiologic(event.target.value)}
+          onChange={biologicCallback}
+          name="biologic"
         >
           {q3MenuData
             .filter((item) => item.value === classofmed)
@@ -52,6 +55,12 @@ const Question3Data = () => {
       </FormControl>
     </FormGroup>
   );
+};
+
+Question3Data.propTypes = {
+  classofmed: PropTypes.string.isRequired,
+  biologic: PropTypes.string.isRequired,
+  biologicCallback: PropTypes.func.isRequired
 };
 
 export { Question3Data, Question3Prompt };

@@ -30,6 +30,24 @@ app.prepare().then(() => {
     });
   });
 
+  server.get("/rest/g/biologic/1", (req, res) => {
+    res.send({
+      classofmed: 'other-anti-neo',
+      biologic: 'bevacizumab',
+      indication: 'glild',
+      howLongBiologic: '3 months',
+      treatmentOutcome: 'partial',
+      howWasOutcomeMeasured: 'symptomatic',
+      biologicComplications: 'no',
+      biologicComplicationsDetails: '',
+      biologicPrescribedImmunology: 'yes',
+      specialty: 'renal',
+      otherSpecialty: 'other specialty',
+      biologicTreatmentFunding: 'ipr',
+      biologicTreatmentOtherFunding: 'other funding body'
+    })
+  });
+
   server.all('*', (req, res) => handler(req, res));
 
   server.listen(port, (err) => {
