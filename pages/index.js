@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 import ApplicationBar from '../components/applicationbar';
 import SideBar from '../components/sidebar';
 import EntryList from '../components/entry-list';
 import EntryForm from '../components/trainee-network/entry-form';
+
+import withAuth from '../hoc/with-auth';
 
 const IndexBody = (props) => {
   const {
@@ -43,6 +47,7 @@ const Index = () => {
   };
   return (
     <div>
+      <CssBaseline />
       <ApplicationBar />
       <SideBar />
       <IndexBody
@@ -54,4 +59,4 @@ const Index = () => {
   )
 };
 
-export default Index;
+export default withAuth(Index);

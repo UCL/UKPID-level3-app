@@ -10,6 +10,12 @@ const handler = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
+  server.post("/rest/login", (req,res) => {
+    res.send({
+      success: true
+    })
+  });
+
   server.post("/rest/p/dmards", (req, res) => {
     res.send({
       success: true
