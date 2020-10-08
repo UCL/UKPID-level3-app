@@ -1,13 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Paper from '@material-ui/core/Paper';
 
-const question1Text = 'Underlying primary immunodeficiency diagnosis';
+const Question1Data = (props) => {
+  const {patientData} = props;
+  return (
+    <List component={Paper} dense>
+      <ListItem>
+        <ListItemText primary={`Patient ID: ${patientData.id}`} />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary={`Year of birth: ${patientData.yob}`} />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary={`Gender: ${patientData.gender}`} />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary={`PID diagnosis: ${patientData.pid}`} />
+      </ListItem>
+    </List>
+  )
+};
 
-const Question1Prompt = () => <Typography>{question1Text}</Typography>;
+Question1Data.propTypes = {
+  patientData: PropTypes.object.isRequired
+};
 
-const Question1Data = () => (
-  <Typography>Get this data from the existing database entry</Typography>
-);
-
-export { Question1Prompt, Question1Data };
+export default Question1Data;

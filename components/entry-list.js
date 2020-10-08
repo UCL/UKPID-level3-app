@@ -34,7 +34,7 @@ const EntryList = (props) => {
               <TableRow
                 hover
                 key={entry.id}
-                onClick={(e) => setEntryCallback(e, entry.id)}
+                onClick={(e) => setEntryCallback(e, entry)}
               >
                 <TableCell>{entry.id}</TableCell>
                 <TableCell>{entry.gender}</TableCell>

@@ -8,13 +8,13 @@ import EntryForm from '../components/trainee-network/entry-form';
 
 const IndexBody = (props) => {
   const {
-    patientId,
+    patient,
     centreId,
     setEntryCallback
   } = props;
-  const hasPatientid = !Number.isNaN(patientId);
+  const hasPatientid = !Number.isNaN(patient.id);
   if (hasPatientid) {
-    return <EntryForm patientId={patientId} />;
+    return <EntryForm patientData={patient} />;
   }
   return (
     <EntryList
@@ -25,23 +25,28 @@ const IndexBody = (props) => {
 };
 
 IndexBody.propTypes = {
-  patientId: PropTypes.number.isRequired,
+  patient: PropTypes.object.isRequired,
   centreId: PropTypes.number.isRequired,
   setEntryCallback: PropTypes.func.isRequired
 };
 
 const Index = () => {
   const centreId = 10000;
-  const [patientId, setPatientId] = useState(NaN);
-  const setEntryCallback = (e, entryId) => {
-    setPatientId(entryId);
+  const [patient, setPatient] = useState({
+    id: NaN,
+    gender: '',
+    yob: NaN,
+    pid: ''
+  });
+  const setEntryCallback = (e, entry) => {
+    setPatient(entry);
   };
   return (
     <div>
       <ApplicationBar />
       <SideBar />
       <IndexBody
-        patientId={patientId}
+        patient={patient}
         centreId={centreId}
         setEntryCallback={setEntryCallback}
       />
